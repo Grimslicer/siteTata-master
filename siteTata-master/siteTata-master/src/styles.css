@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* CSS for the main content */
+main {
+  flex-grow: 1; /* Allows the main content to take available vertical space */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* CSS for the centered content */
+.center-content {
+  width: 70%; /* Adjust the width as needed */
+}
+
+/* CSS for the footer */
+app-footer {
+  /* Use your existing footer styles */
+  background-color: rgb(17, 24, 39);
+}
+
+.sticky {
+  position: sticky;
+  bottom: 0;
+}

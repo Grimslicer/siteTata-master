@@ -1,0 +1,239 @@
+<div *ngIf="selectedProduct">
+  <div class="lg:flex lg:flex-col md:flex md:flex-col">
+    <div class="py-5">
+      <img
+        class="mx-auto"
+        style="
+          max-width: 100%;
+          max-height: 600px;
+          border-radius: 15px;
+          border: 3px solid #dfdfdf;
+        "
+        [src]="'assets/img/pompe/' + selectedProduct.imgFileName"
+        alt="DR24"
+      />
+    </div>
+
+    <div class="overflow-x-auto shadow-md sm:rounded-lg mx-auto">
+      <table class="table-auto">
+        <!-- xl:flex md:flex md:flex-col sm:flex sm:flex-row -->
+        <thead>
+          <tr class="bg-red-500 hover:bg-red-700">
+            <th scope="col" class="px-6 py-3 text-center">Nume Produs</th>
+            <th scope="col" class="px-6 py-3 text-center">Livrare Maxima</th>
+            <th scope="col" class="px-6 py-3 text-center">Presiune Maxima</th>
+            <th scope="col" class="px-6 py-3 text-center">Zgomot</th>
+            <th scope="col" class="px-6 py-3 text-center">Dimensiuni</th>
+            <th scope="col" class="px-6 py-3 text-center">Greutate</th>
+
+            <th scope="col" class="px-6 py-3 text-center">Viscozitate</th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-center"
+              *ngIf="selectedProduct.details.canistra !== ''"
+            >
+              Canistra
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-center"
+              *ngIf="selectedProduct.details.necesar_aer !== ''"
+            >
+              Necesar aer
+            </th>
+            <th scope="col" class="px-6 py-3 text-center">Mix</th>
+            <th scope="col" class="px-6 py-3 text-center">Aplicare</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.name }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.details.max_shipment }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.details.max_pressure }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.details.noise }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.details.dimension }}
+            </td>
+
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.details.weight }}
+            </td>
+            <td
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{ selectedProduct.details.viscosity }}
+            </td>
+            <td
+              class="px-6 py-4 w-full"
+              *ngIf="selectedProduct.details.canistra !== ''"
+            >
+              {{ selectedProduct.details.canistra }}
+            </td>
+            <td
+              class="px-6 py-4 w-full"
+              *ngIf="selectedProduct.details.necesar_aer !== ''"
+            >
+              {{ selectedProduct.details.necesar_aer }}
+            </td>
+            <td class="px-6 py-4 w-full">
+              {{ selectedProduct.details.mixare }}
+            </td>
+            <td class="px-6 py-4 w-full">
+              {{ selectedProduct.details.aplicare }}
+            </td>
+          </tr>
+          <!-- <tr>
+          <td>Witchy Woman</td>
+          <td>The Eagles</td>
+          <td>1972</td>
+        </tr>
+        <tr>
+          <td>Shining Star</td>
+          <td>Earth, Wind, and Fire</td>
+          <td>1975</td>
+        </tr> -->
+        </tbody>
+      </table>
+
+      <table class="table-auto">
+        <!-- xl:flex md:flex md:flex-col sm:flex sm:flex-row -->
+        <thead>
+          <tr class="bg-red-500 hover:bg-red-700">
+            <th scope="col" class="px-6 py-3">Motor</th>
+            <th scope="col" class="px-6 py-3">Latime lucru</th>
+            <th scope="col" class="px-6 py-3">Capacitate</th>
+            <th scope="col" class="px-6 py-3">Aer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{ selectedProduct.name }}
+            </td>
+
+            <td class="px-6 py-4 w-full">
+              <p>{{ selectedProduct.details.weight }}</p>
+            </td>
+            <td class="px-6 py-4 w-full">
+              <p>{{ selectedProduct.details.weight }}</p>
+            </td>
+            <td class="px-6 py-4 w-full">
+              <p>{{ selectedProduct.details.weight }}</p>
+            </td>
+          </tr>
+          <!-- <tr>
+          <td>Witchy Woman</td>
+          <td>The Eagles</td>
+          <td>1972</td>
+        </tr>
+        <tr>
+          <td>Shining Star</td>
+          <td>Earth, Wind, and Fire</td>
+          <td>1975</td>
+        </tr> -->
+        </tbody>
+      </table>
+
+      <!-- <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table
+          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">Viscozitate</th>
+              <th scope="col" class="px-6 py-3">Canistra</th>
+              <th
+                scope="col"
+                class="px-6 py-3"
+                *ngIf="selectedProduct.details.necesar_aer !== '-'"
+              >
+                Necesar aer
+              </th>
+              <th scope="col" class="px-6 py-3">Mix</th>
+              <th scope="col" class="px-6 py-3">Aplicare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+            >
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                {{ selectedProduct.details.viscosity }}
+              </th>
+              <td class="px-6 py-4 w-full">
+                {{ selectedProduct.details.canistra }}
+              </td>
+              <td
+                class="px-6 py-4 w-full"
+                *ngIf="selectedProduct.details.necesar_aer === '-'"
+              >
+                {{ selectedProduct.details.necesar_aer }}
+              </td>
+              <td class="px-6 py-4 w-full">
+                {{ selectedProduct.details.mixare }}
+              </td>
+              <td class="px-6 py-4 w-full">
+                {{ selectedProduct.details.aplicare }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table
+          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">Motor</th>
+              <th scope="col" class="px-6 py-3">Latime lucru</th>
+              <th scope="col" class="px-6 py-3">Capacitate</th>
+              <th scope="col" class="px-6 py-3">Aer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+            >
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                {{ selectedProduct.name }}
+              </th>
+
+              <td class="px-6 py-4 w-full">
+                <p>{{ selectedProduct.details.weight }}</p>
+              </td>
+              <td class="px-6 py-4 w-full">
+                <p>{{ selectedProduct.details.weight }}</p>
+              </td>
+              <td class="px-6 py-4 w-full">
+                <p>{{ selectedProduct.details.weight }}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,225 @@
+<div class="container mx-auto">
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Pompe Extractie:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + products.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-2 sm:gap-10 md:grid md:grid-cols-3 md:gap-10 lg:grid lg:grid-cols-4 lg:gap-10"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of products"
+    >
+      <div class="px-3 py-2" style="background-color: #e6e6e6">
+        <img
+          class="w-full"
+          style="
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 15px;
+            border: 3px solid #dfdfdf;
+          "
+          [src]="'assets/img/pompe/' + product.imgFileName"
+          alt="DR24"
+        />
+      </div>
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">{{ product.name }}</div>
+
+        <p class="text-gray-700 text-base">{{ product.details.aplicare }},</p>
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+      </div>
+
+      <div class="flex justify-center pb-8" style="margin: 5px">
+        <button
+          (click)="selectProduct(product)"
+          class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+        >
+          Detalii
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Pompe pentru material bi component:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + pompe_bi.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-2 sm:gap-10 md:grid md:grid-cols-3 md:gap-10 lg:grid lg:grid-cols-4 lg:gap-10"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of pompe_bi"
+    >
+      <div class="px-3 py-2" style="background-color: #e6e6e6">
+        <img
+          class="w-full"
+          style="
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 15px;
+            border: 3px solid #dfdfdf;
+          "
+          [src]="'assets/img/pompe/' + product.imgFileName"
+          alt="DR24"
+        />
+      </div>
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">{{ product.name }}</div>
+
+        <p class="text-gray-700 text-base">{{ product.details.aplicare }},</p>
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+      </div>
+
+      <div class="setContainerBoss">
+        <div class="flex justify-center pb-8" style="margin: 5px">
+          <button
+            (click)="selectProduct(product)"
+            class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+          >
+            Detalii
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Pompe Airless:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + pompe_airless.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-2 sm:gap-10 md:grid md:grid-cols-3 md:gap-10 lg:grid lg:grid-cols-4 lg:gap-10"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of pompe_airless"
+    >
+      <div class="px-3 py-2" style="background-color: #e6e6e6">
+        <img
+          class="w-full"
+          style="
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 15px;
+            border: 3px solid #dfdfdf;
+          "
+          [src]="'assets/img/pompe/' + product.imgFileName"
+          alt="DR24"
+        />
+      </div>
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">{{ product.name }}</div>
+
+        <p class="text-gray-700 text-base">{{ product.details.aplicare }}</p>
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+      </div>
+
+      <div class="flex justify-center pb-8" style="margin: 5px">
+        <button
+          (click)="selectProduct(product)"
+          class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+        >
+          Detalii
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Mixer de vopsea:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + mixer.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-3 sm:gap-10 md:grid md:grid-cols-2 md:gap-10 lg:grid lg:grid-cols-3 lg:gap-10"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of mixer"
+    >
+      <img
+        class="w-full"
+        style="max-width: 100%; max-height: 350px"
+        [src]="'assets/img/pompe/' + product.imgFileName"
+        alt="DR24"
+      />
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">{{ product.name }}</div>
+
+        <p class="text-gray-700 text-bas text-center">
+          {{ product.details.mixare }}
+        </p>
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+      </div>
+
+      <div class="flex justify-center pb-8" style="margin: 5px">
+        <button
+          (click)="selectProduct(product)"
+          class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+        >
+          Detalii
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Mașini marcaj rutier:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + masini.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-3 sm:gap-10 md:grid md:grid-cols-2 md:gap-10 lg:grid lg:grid-cols-3 lg:gap-10"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of masini"
+    >
+      <div class="px-3 py-2" style="background-color: #e6e6e6">
+        <img
+          class="w-full"
+          style="
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 15px;
+            border: 3px solid #dfdfdf;
+          "
+          [src]="'assets/img/pompe/' + product.imgFileName"
+          alt="DR24"
+        />
+      </div>
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">{{ product.name }}</div>
+
+        <p class="text-gray-700 text-base text-center">
+          {{ product.details.aplicare }}
+        </p>
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+      </div>
+
+      <div class="flex justify-center pb-8" style="margin: 5px">
+        <button
+          (click)="selectProduct(product)"
+          class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+        >
+          Detalii
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

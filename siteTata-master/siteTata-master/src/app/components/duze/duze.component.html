@@ -1,0 +1,117 @@
+<div class="container mx-auto">
+  <img
+    class="w-full"
+    style="
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 15px;
+      border: 3px solid #dfdfdf;
+    "
+    [src]="'assets/img/pagina duze_ml_resize_x2.jpg'"
+    alt="DR24"
+  />
+
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Duze Flat:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + duzeFlat.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-2 sm:gap-10 md:grid md:grid-cols-3 md:gap-10 lg:flex lg:justify-center"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of duzeFlat"
+    >
+      <div class="px-3 py-2" style="background-color: #e6e6e6">
+        <img
+          class="w-full"
+          style="
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 15px;
+            border: 3px solid #dfdfdf;
+          "
+          [src]="'assets/img/pompe/' + product.photo"
+          alt="DR24"
+        />
+      </div>
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">{{ product.name }}</div>
+
+        <!-- <div class="flex justify-between">
+          <p class="text-gray-700 text-base">{{ product.details.series }}</p>
+          <p class="text-gray-700 text-base">{{ product.details.weight }}</p>
+          <p class="text-gray-700 text-base">{{ product.details.pressure }}</p>
+        </div> -->
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+
+        <div class="setContainerBoss">
+          <div class="flex justify-center" style="margin: 5px">
+            <button
+              (click)="selectProduct(product)"
+              class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+            >
+              Detalii
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex text-center items-end">
+    <h1 class="font-bold text-2xl">Duze Reversibile:</h1>
+    <h1 class="text-xl pl-2 text-gray-400">
+      {{ "(" + duzeReverse.length + " " + "produse" + ")" }}
+    </h1>
+  </div>
+  <div
+    class="cardContainer sm:grid sm:grid-cols-2 sm:gap-10 md:grid md:grid-cols-3 md:gap-10 lg:flex lg:justify-center"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg my-4 flex flex-col justify-between"
+      *ngFor="let product of duzeReverse"
+    >
+      <div class="px-3 py-2" style="background-color: #e6e6e6">
+        <img
+          class="w-full"
+          style="
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 15px;
+            border: 3px solid #dfdfdf;
+          "
+          [src]="'assets/img/pompe/' + product.photo"
+          alt="DR24"
+        />
+      </div>
+      <div class="px-6 pb-4">
+        <div class="font-bold text-xl mb-2 text-center">
+          {{ product.name }}
+        </div>
+
+        <!-- <div class="flex justify-between">
+          <p class="text-gray-700 text-base">{{ product.details.series }}</p>
+          <p class="text-gray-700 text-base">{{ product.details.weight }}</p>
+          <p class="text-gray-700 text-base">{{ product.details.pressure }}</p>
+        </div> -->
+        <!-- <p class="text-gray-700 text-base">{{ product.details.dimension }},</p> -->
+        <hr class="color-white" />
+
+        <div class="setContainerBoss">
+          <div class="flex justify-center" style="margin: 5px">
+            <button
+              (click)="selectProduct(product)"
+              class="bg-red-500 hover:bg-red-700 w-56 text-white font-bold py-2 px-4 setBorder text-lg"
+            >
+              Detalii
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

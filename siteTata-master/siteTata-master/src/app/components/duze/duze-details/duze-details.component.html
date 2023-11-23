@@ -1,0 +1,102 @@
+<div *ngIf="selectedProduct">
+  <div class="lg:flex lg:flex-col md:flex md:flex-col">
+    <div class="py-5">
+      <img
+        class="mx-auto"
+        style="
+          max-width: 100%;
+          max-height: 600px;
+          border-radius: 15px;
+          border: 3px solid #dfdfdf;
+        "
+        [src]="'assets/img/pompe/' + selectedProduct.photo"
+        alt="DR24"
+      />
+    </div>
+
+    <div class="overflow-x-auto shadow-md sm:rounded-lg mx-auto">
+      <table
+        class="table-auto"
+        *ngIf="selectedProduct.name === 'The Line Marking'"
+      >
+        <!-- xl:flex md:flex md:flex-col sm:flex sm:flex-row -->
+        <thead>
+          <tr class="bg-red-500 hover:bg-red-700">
+            <th scope="col" class="px-6 py-3 text-center">Nume Produs</th>
+
+            <th scope="col" class="px-6 py-3 text-center">Referinta Model</th>
+            <th scope="col" class="px-6 py-3 text-center">Compozitie</th>
+            <th scope="col" class="px-6 py-3 text-center">Inaltime</th>
+            <th scope="col" class="px-6 py-3 text-center">Diametrul</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.name }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.reference }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.compozitie }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.h }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.greek }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table-auto" *ngIf="selectedProduct.name === 'SPEEDY 5'">
+        <!-- xl:flex md:flex md:flex-col sm:flex sm:flex-row -->
+        <thead>
+          <tr class="bg-red-500 hover:bg-red-700">
+            <th scope="col" class="px-6 py-3 text-center">MWP</th>
+            <th scope="col" class="px-6 py-3 text-center">Compatibilitate</th>
+            <th scope="col" class="px-6 py-3 text-center">Standard</th>
+            <th scope="col" class="px-6 py-3 text-center">Superfinish</th>
+            <th scope="col" class="px-6 py-3 text-center">Twintip</th>
+            <th scope="col" class="px-6 py-3 text-center">Marcaj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.MWP }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.Compatibilitate }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.Standard }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.Superfinish }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.Twintip }}
+            </td>
+            <td scope="col" class="px-6 py-4">
+              {{ selectedProduct.Marcaj }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <tr>
+          <td>Witchy Woman</td>
+          <td>The Eagles</td>
+          <td>1972</td>
+        </tr>
+        <tr>
+          <td>Shining Star</td>
+          <td>Earth, Wind, and Fire</td>
+          <td>1975</td>
+        </tr> -->
+    </div>
+  </div>
+</div>

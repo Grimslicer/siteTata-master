@@ -1,0 +1,16 @@
+.setBorder {
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.adInfoBox1 {
+  float: left;
+  padding: 5px 5px 5px 10px;
+  position: absolute;
+  width: 457px;
+  background-color: green;
+  bottom: 0;
+}
